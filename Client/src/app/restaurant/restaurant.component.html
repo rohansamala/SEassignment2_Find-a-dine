@@ -1,0 +1,23 @@
+<form class="form-inline">
+    <input class="form-control" name="namecity" [(ngModel)]="namecity" type="text" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
+</form>
+
+<!-- <div *ngFor="let rest of rests">
+        <p><b>Name:</b> {{rest.name}}<br />
+        <b>Location:</b> {{rest.formatted_address}}<br />
+        <b>Rating:</b>   {{rest.rating}}<br/> 
+        <a [routerLink]="['/profile']" routerLinkActive="router-link-active"
+          (click)="showprofile(rest)">Profile Page</a></p><hr width="80%" size="25%">
+    
+</div> -->
+<div class="card-columns">
+    <div class="card border-dark mb-3" *ngFor="let rest of rests">
+      <div class="card-body">
+        <h5 class="card-title"><b>{{rest.name}}</b></h5>
+        <p class="card-text">
+            <a [routerLink]="['/profile']" routerLinkActive="router-link-active"
+              (click)="showprofile(rest)">Profile Page</a></p>
+      </div>
+    </div>
+</div>
