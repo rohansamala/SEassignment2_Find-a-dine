@@ -4,13 +4,13 @@ var path = require('path');
 var app = express();
 var port=8000;
 var request = require('request');
-app.use(express.static(path.join(__dirname,'/client/dist/SEAssignment/')));
+app.use(express.static(path.join(__dirname,'/Client/dist/SEAssignment/')));
 
 const api=require('./routes/server.js');
 app.use('/api',api);
 
 app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname,'./client/dist/SEAssignment/index.html'));
+    res.sendFile(path.join(__dirname,'./Client/dist/SEAssignment/index.html'));
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
